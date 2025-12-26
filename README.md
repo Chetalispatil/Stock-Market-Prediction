@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+### Stock Price Prediction Using LSTM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that predicts next 30 days stock prices for NIFTY 50 companies using a Long Short-Term Memory (LSTM) deep learning model. The system provides visual analysis, statistical insights, and downloadable PDF reports to support informed investment decisions.
 
-## Available Scripts
+ ## Features
 
-In the project directory, you can run:
+ 1. 30-day stock price prediction using LSTM
 
-### `npm start`
+ 2. Select from NIFTY 50 companies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ 3. Line graph for future price trends
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ 4. Weekly average bar chart
 
-### `npm test`
+ 5. Auto-generated stock analysis report
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 6. Download report as PDF
 
-### `npm run build`
+ 7. Responsive and user-friendly UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
+Frontend
+React.js
+HTML5, CSS3
+Axios
+jsPDF, html2canvas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend
+Python (Flask)
+TensorFlow / Keras
+Pandas, NumPy
+yFinance
+Matplotlib
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Project Architecture
+Stock-Price-Prediction/
+│
+├── backend/
+│   ├── app.py
+│   ├── lstm_model.py
+│   ├── utils.py
+│   └── static/graphs/
+│
+├── frontend/
+│   ├── App.js
+│   ├── App.css
+│   └── package.json
+│
+└── README.md
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## How It Works
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+User selects a company from NIFTY 50
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Frontend sends request to Flask backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Backend fetches historical stock data
 
-## Learn More
+LSTM model predicts next 30 days prices
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Graphs and insights are generated
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Results are displayed on UI
 
-### Code Splitting
+User can download the report as PDF
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Machine Learning Model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Model: Long Short-Term Memory (LSTM)
 
-### Making a Progressive Web App
+Input: Last 30 days closing prices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Output: Next 30 days predicted prices
 
-### Advanced Configuration
+Scaling: MinMaxScaler
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Framework: TensorFlow / Keras
 
-### Deployment
+## Installation & Setup
+1️ Backend Setup
+pip install flask flask-cors tensorflow keras pandas numpy yfinance matplotlib
+python app.py
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+Backend runs at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+http://localhost:5000
+
+2️ Frontend Setup
+npm install
+npm start
+
+
+## Sample Outputs
+
+Line graph showing predicted daily prices
+
+Bar chart showing weekly averages
+
+Text-based analytical report
+
+Downloadable PDF report
+
+
+## Future Enhancements
+
+News-based sentiment analysis
+
+Improved prediction accuracy
+
+Cloud deployment
+
+Support for global stock markets
+
+User authentication & dashboards
+
+
+## Disclaimer
+
+This project is for educational purposes only.
+Stock market predictions are uncertain and should not be used as financial advice.
+
+## Author
+
+Chetali Patil
+B.Tech Computer Science
